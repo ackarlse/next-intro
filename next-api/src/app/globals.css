@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+
+.meny{
+  display: flex;
+  gap: 1rem;
+}
+
+h1{
+  font-size: 2rem;
+  flex-basis: 100%;
+}
+
+h3{
+  font-size: 1.6rem;
+}
+
+main section{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+article{
+  max-width: 300px;
+  width:100%;
+}
+
+
+input{
+  border:1px solid #000;
+  margin: 0 1rem;
+}
