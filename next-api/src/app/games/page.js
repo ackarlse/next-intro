@@ -3,14 +3,14 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 export default function GamesPage(){
     const [games, setGames] = useState([])
-    const getQuizzes = async () => {
-            const response = await axios.get('/api/games')
-            console.log(response?.data)
-            setGames(response?.data)
+    const getGames = async () => {
+        const response = await axios.get('/api/games')
+        console.log(response?.data)
+        setGames(response?.data)
 
     }
       useEffect(() => {
-        getQuizzes()
+        getGames()
       }, [])
 
 return (
