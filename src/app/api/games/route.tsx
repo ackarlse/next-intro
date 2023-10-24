@@ -29,18 +29,14 @@ const videoGames = [
       series: ["Assassin's Creed II", "Assassin's Creed: Black Flag"]
     },
   ]
+export const GET = async () =>{
+    return NextResponse.json({data: videoGames}, {status: 200})
+}
 
-  export function GET() {
-    return NextResponse.json(videoGames, { status: 200 })
-  }
-  export default function handler(req, res) {
-    if (req.method === 'POST') {
-      const data = req.body
-      videoGames.push(data)
-      res.status(201).json({ success: true, data: videoGames })
-    } else {
-      res.status(200).json({ success: true, data: videoGames })
-    }
-  }
-  
- 
+export const POST = async (request: NextRequest)=>{
+    const body = await request.json()
+    console.log("sjekk",body.newGame)
+    videoGames.push(body.newGame)
+    return NextResponse.json({data: videoGames}, {status: 200})
+
+}
